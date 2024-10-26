@@ -9,23 +9,23 @@ The project directory contains the following files:
 ### `brown/`
 - **Description**: This directory contains the text documents from the Brown corpus, which are processed in this project.
 
-### `text_processing.py`
+### `app.py`
 - **Description**: This is the main script that performs the following operations:
   - Reads all documents in the `brown/` directory.
   - Tokenizes the text and filters out unwanted characters and punctuation.
   - Applies the Porter stemming algorithm to reduce words to their base forms.
-  - Constructs a term frequency dictionary (`tf_dict`) for each document.
+  - Constructs a term frequency dictionary (`termFr_dict`) for each document.
   - Builds an inverted index to map each term to the documents containing it.
   - Calculates the TF-IDF values for each term in each document.
   - Serializes and saves the results (distinct words, term frequencies, TF-IDF values, and the inverted index) into separate `.p` files using `pickle`.
 
-### `words.p`
+### `dist_words.p`
 - **Description**: A pickle file that stores a set of distinct words extracted from the Brown corpus before normalization (stemming). This file can be loaded to retrieve the unique words for further analysis.
 
-### `tf_dict.p`
+### `termFr_dict.p`
 - **Description**: A pickle file containing a dictionary where each key is a document name, and the corresponding value is another dictionary representing the term frequencies of words in that document. This data structure provides insights into the frequency distribution of terms in each document.
 
-### `tf_idf.p`
+### `termFr_idf.p`
 - **Description**: A pickle file that stores the TF-IDF values for each term in every document. The TF-IDF value helps assess the importance of a term in a document relative to the entire corpus, which is crucial for information retrieval and text mining tasks.
 
 ### `invertedIndex.p`
